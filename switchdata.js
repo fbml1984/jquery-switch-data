@@ -1,3 +1,12 @@
+/*
+ * @license
+ *
+ * Switch Data v0.0.1
+ * https://github.com/fbml1984/jquery-switch-data
+ *
+ * Copyright (c) 2018-2018 Fábio Lazaro
+ * Licensed under the MIT license (https://github.com/fbml1984/jquery-switch-data/blob/master/LICENSE)
+ */
 (function ($) {
     $.fn.switchData = function (options) {
         var settings = $.extend({
