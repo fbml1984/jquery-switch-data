@@ -1,0 +1,80 @@
+.switch-container > .form-row {
+    display: flex;
+    flex-direction: row;
+}
+
+.switch-container > .form-row > .col > .form-froup {
+    position: relative;
+}
+
+.switch-container > .form-row > .col > div > button {
+    position: absolute;
+    top: 4px;
+    right: 6px;
+    border: none;
+    background: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.switch-container > .form-row > .col > div > button::after {
+    font: normal normal normal 26px/1 "Material Design Icons";
+    content: "\F159";
+    color: #CCCCCC;
+}
+
+.switch-container > .form-row > .col > div > input {
+    padding-right: 35px;
+}
+
+.switch-container > .form-row > .col,
+.switch-container > .form-row > .col > div,
+.switch-container > .form-row > .col > div > ul {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+select[class*='switch-'] {
+    display: none;
+}
+
+select[class*='switch-'] + ul {
+    height: 200px;
+    margin: 0;
+    padding: 0;
+    background-color: white;
+    list-style-type: none;
+    overflow-y: auto;
+}
+
+select[class*='switch-'] + ul > li {
+    position: relative;
+    display: flex;
+    padding: 3px 5px;
+    min-height: 25px;
+    justify-content: space-between;
+    text-transform: uppercase;
+}
+
+select[class*='switch-'] + ul > li:nth-child(odd) {
+    background: var(--light);
+}
+
+select[class*='switch-'] + ul > li.repeated {
+    color: #CCCCCC;
+}
+
+select[class*='switch-'] + ul > li::before,
+select[class*='switch-'] + ul > li::after {
+    font: normal normal normal 20px/1 "Material Design Icons";
+}
+
+select[class='switch-right'] + ul > li::after {
+    content: "\F142";
+}
+
+select[class='switch-left'] + ul > li::before {
+    content: "\F141";
+}
