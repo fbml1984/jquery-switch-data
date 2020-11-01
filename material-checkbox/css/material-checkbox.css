@@ -1,0 +1,84 @@
+label.material-checkbox {
+	cursor: pointer;
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	-webkit-tap-highlight-color: transparent;
+	transform: translate3d(0, 0, 0);
+	margin: 0 !important;
+}
+
+/*.material-checkbox:before {*/
+	/*content: "";*/
+	/*position: absolute;*/
+	/*left: -5px;*/
+	/*width: 28px;*/
+	/*height: 28px;*/
+	/*border-radius: 50%;*/
+	/*background: rgba(34, 50, 84, 0.04);*/
+	/*opacity: 0;*/
+/*}*/
+
+.material-checkbox input[type="checkbox"] + svg {
+	fill: none;
+	stroke-linecap: round;
+	stroke-linejoin: round;
+	stroke: #C8CCD4;
+	stroke-width: 1;
+	transform: translate3d(0, 0, 0);
+	transition: all 0.1s ease;
+}
+
+.material-checkbox input[type="checkbox"] + svg > path {
+	stroke-dasharray: 60;
+	stroke-dashoffset: 0;
+}
+
+.material-checkbox input[type="checkbox"] + svg > polyline {
+	stroke-dasharray: 22;
+	stroke-dashoffset: 66;
+}
+
+/*.material-checkbox:hover::before {*/
+	/*animation: ripple 1s ease-out;*/
+/*}*/
+
+.material-checkbox:hover input[type="checkbox"] + svg {
+	stroke: #4285F4;
+}
+
+.material-checkbox input[type="checkbox"]:checked + svg {
+	stroke-width: 2;
+	stroke: #4285F4;
+}
+
+.material-checkbox input[type="checkbox"]:checked:disabled + svg {
+	stroke: #4285F4;
+}
+
+.material-checkbox input[type="checkbox"]:checked + svg > path {
+	stroke-dashoffset: 60;
+	transition: all 0.1s linear;
+}
+
+.material-checkbox input[type="checkbox"]:checked + svg > polyline {
+	stroke-dashoffset: 42;
+	transition: all 0.1s linear;
+	transition-delay: 0.1s;
+}
+
+@keyframes ripple {
+	0% {
+		transform: scale(0, 0);
+		opacity: 1;
+	}
+	20% {
+		transform: scale(1.5, 1.5);
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+		transform: scale(3, 3);
+	}
+}

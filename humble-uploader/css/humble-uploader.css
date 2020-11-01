@@ -1,0 +1,489 @@
+:root {
+    --humble-thumbnail-background-color: whitesmoke;
+    --humble-thumbnail-border-width: 3px;
+    --humble-thumbnail-border-color: white;
+    --thumbnail-container-background-color: #f6f6f6;
+    --humble-thumbnail-non-image-files-background-color: #e2e2e2;
+    --humble-thumbnail-non-image-files-color: #979797;
+    --humble-label-background-color: white;
+    --humble-label-border-color: #ced4da;
+    --ribbon-size: 70px;
+    --ribbon-border-size: 70px;
+    --ribbon-top: -90px;
+}
+
+.hide {
+    display: none;
+}
+
+.humble-file-group {
+    display: flex;
+    flex-direction: row;
+}
+
+.humble-file-group > .humble-file-container {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    flex: 1;
+}
+
+.humble-file-group > .humble-file-container > .humble-title-container {
+    overflow: hidden;
+    display: flex;
+    flex: 1;
+    align-items: center;
+}
+
+.humble-file-group > .humble-file-container > .humble-title-container > h4 {
+    font-size: 1.2rem;
+    margin: 0;
+}
+
+.humble-file-group > .humble-file-container > .humble-file {
+    display: flex;
+    flex: 1;
+    max-height: 35px;
+    background: var(--humble-label-background-color);
+}
+
+.humble-file-group > .humble-file-container > .humble-file > .humble-single {
+    display: none;
+}
+
+.humble-file-group > .humble-file-container > .humble-file > .humble-file-label {
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0;
+    border: 1px solid var(--humble-label-border-color);
+    background: var(--humble-label-background-color);
+}
+
+.humble-file-group > .humble-file-container > .humble-file > .humble-file-label > span {
+    white-space: nowrap;
+    overflow: hidden;
+    -ms-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    padding: 5px;
+}
+
+.humble-file-group > .humble-file-container > .humble-file > .humble-file-label::after {
+    display: flex;
+    flex: 1;
+    height: 100%;
+    align-items: center;
+    font: normal normal normal 25px/1 "Material Design Icons";
+    content: "\f21e";
+    color: var(--humble-thumbnail-non-image-files-color);
+    align-items: center;
+    justify-content: center;
+    max-width: 30px;
+    border-left: 1px solid var(--humble-label-border-color);
+    background: var(--humble-thumbnail-non-image-files-background-color);
+}
+
+.humble-file-group .file-thumbnail {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    background: var(--humble-thumbnail-background-color);
+    box-shadow: 0 1px 8px rgba(0, 0, 0, .1);
+    margin-right: 10px;
+    border: var(--humble-thumbnail-border-width) solid var(--humble-thumbnail-border-color);
+}
+
+.humble-file-group .file-thumbnail > .thumbnail-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--thumbnail-container-background-color);
+}
+
+.humble-file-group .file-thumbnail.icon-pdf {
+    background-color: var(--humble-thumbnail-non-image-files-background-color);
+}
+
+.humble-file-group .file-thumbnail.icon-pdf > img {
+    display: none;
+}
+
+/**
+DropZone
+ */
+.humble-dropzone {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-height: 100px;
+    padding: 5px;
+    justify-content: center;
+    align-items: center;
+    border: 2px dashed #F0F0F0;
+}
+
+.humble-dropzone.drag-enter {
+    background-color: #f6f6f6;
+}
+
+.humble-dropzone.empty::after {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    content: "Drag and Drop here";
+    color: var(--humble-thumbnail-non-image-files-color);
+}
+
+/*************************************************************************/
+/*************************************************************************/
+.thumbnail-separator {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    min-height: 150px;
+}
+
+.thumbnail-separator > .file-thumbnail {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+}
+
+.thumbnail-separator > .file-thumbnail > .thumbnail-container {
+    box-shadow: 0 0px 8px rgba(0, 0, 0, .2);
+    overflow: hidden;
+    position: relative;
+}
+
+.thumbnail-separator > .file-thumbnail > .thumbnail-container > .thumbnail-image-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f0f0f0;
+}
+
+.thumbnail-separator > .file-thumbnail > .thumbnail-buttons {
+    display: none;
+}
+
+.thumbnail-separator > .file-thumbnail > .thumbnail-buttons > a {
+    display: flex;
+    flex: 1;
+    width: 24px;
+    height: 24px;
+}
+
+.thumbnail-separator > .file-thumbnail > .thumbnail-buttons > .thumbnail-delete {
+    background: url("../img/delete.svg") center center no-repeat;
+}
+
+.thumbnail-separator > .file-thumbnail > .thumbnail-buttons > .thumbnail-download {
+    background: url("../img/download.svg") center center no-repeat;
+}
+
+.thumbnail-separator > .file-thumbnail > .thumbnail-buttons > .thumbnail-preview {
+    background: url("../img/preview.svg") center center no-repeat;
+}
+
+.thumbnail-separator > .file-thumbnail > .thumbnail-container > .thumbnail-filename {
+    position: absolute;
+    bottom: 5px;
+    left: 0;
+    width: 100%;
+    height: 20px;
+    padding: 0 10px 0 10px;
+    overflow: hidden;
+    min-width: 0;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    background: rgba(255, 255, 255, 0.8);
+}
+
+.thumbnail-container.icon-pdf::before {
+    content: "\f225";
+}
+
+.thumbnail-separator > .file-thumbnail:hover {
+    position: relative;
+}
+
+.thumbnail-separator > .file-thumbnail:hover > .thumbnail-container {
+    position: relative;
+}
+
+.thumbnail-separator > .file-thumbnail:hover > .thumbnail-container >  .thumbnail-filename{
+    bottom: 45px;
+}
+
+.thumbnail-separator > .file-thumbnail:hover > .thumbnail-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .5);
+}
+
+.thumbnail-separator > .file-thumbnail:hover > .thumbnail-buttons {
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    justify-content: flex-end;
+    cursor: pointer;
+}
+
+.thumbnail-separator > .file-thumbnail:hover > .thumbnail-container > .thumbnail-image-container {
+    -webkit-transform: translate(0, -40px);
+    -moz-transform: translate(0, -40px);
+    -ms-transform: translate(0, -40px);
+    -o-transform: translate(0, -40px);
+    transform: translate(0, -40px);
+    -webkit-transition: 0.05s linear;
+    transition: 0.05s linear;
+    -webkit-transition-delay: 0.01s;
+    transition-delay: 0.01s;
+}
+
+/** Button **/
+.humble-multifiles {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-height: 100px;
+    padding: 5px;
+    justify-content: center;
+    border: 2px dashed var(--humble-thumbnail-non-image-files-color);
+    background: #E6E6E6;
+}
+
+.humble-multifiles > label {
+    display: flex;
+    justify-content: center;
+    flex: 1;
+    margin: 0;
+    min-height: 50px;
+}
+
+.humble-multifiles > label > span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex: 1;
+    margin: 10px;
+    font-size: 1.5rem;
+    color: var(--humble-thumbnail-non-image-files-color);
+}
+
+.humble-multifiles > label > span > small {
+    font-size: 60%;
+}
+
+.humble-multifiles > .thumbnail-separator:first-child {
+    margin-top: 10px;
+}
+
+.humble-multifiles > input[type="file"] {
+    display: none;
+}
+
+[class*="icon-"]::before {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    right: 0;
+    font: normal normal normal 45px/1 "Material Design Icons";
+    color: var(--humble-thumbnail-non-image-files-color);
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    background: var(--humble-thumbnail-non-image-files-background-color);
+}
+
+@media (min-width: 400px) {
+
+}
+
+@media (min-width: 576px) {
+
+}
+
+@media (min-width: 768px) {
+
+}
+
+@media (min-width: 992px) {
+
+}
+
+@media (min-width: 1200px) {
+
+}
+
+.animated {
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+.animated.infinite {
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+}
+
+@-webkit-keyframes bounceIn {
+    from,
+    20%,
+    40%,
+    60%,
+    80%,
+    to {
+        -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+        animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    }
+
+    0% {
+        opacity: 0;
+        -webkit-transform: scale3d(0.3, 0.3, 0.3);
+        transform: scale3d(0.3, 0.3, 0.3);
+    }
+
+    20% {
+        -webkit-transform: scale3d(1.1, 1.1, 1.1);
+        transform: scale3d(1.1, 1.1, 1.1);
+    }
+
+    40% {
+        -webkit-transform: scale3d(0.9, 0.9, 0.9);
+        transform: scale3d(0.9, 0.9, 0.9);
+    }
+
+    60% {
+        opacity: 1;
+        -webkit-transform: scale3d(1.03, 1.03, 1.03);
+        transform: scale3d(1.03, 1.03, 1.03);
+    }
+
+    80% {
+        -webkit-transform: scale3d(0.97, 0.97, 0.97);
+        transform: scale3d(0.97, 0.97, 0.97);
+    }
+
+    to {
+        opacity: 1;
+        -webkit-transform: scale3d(1, 1, 1);
+        transform: scale3d(1, 1, 1);
+    }
+}
+
+@keyframes bounceIn {
+    from,
+    20%,
+    40%,
+    60%,
+    80%,
+    to {
+        -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+        animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    }
+
+    0% {
+        opacity: 0;
+        -webkit-transform: scale3d(0.3, 0.3, 0.3);
+        transform: scale3d(0.3, 0.3, 0.3);
+    }
+
+    20% {
+        -webkit-transform: scale3d(1.1, 1.1, 1.1);
+        transform: scale3d(1.1, 1.1, 1.1);
+    }
+
+    40% {
+        -webkit-transform: scale3d(0.9, 0.9, 0.9);
+        transform: scale3d(0.9, 0.9, 0.9);
+    }
+
+    60% {
+        opacity: 1;
+        -webkit-transform: scale3d(1.03, 1.03, 1.03);
+        transform: scale3d(1.03, 1.03, 1.03);
+    }
+
+    80% {
+        -webkit-transform: scale3d(0.97, 0.97, 0.97);
+        transform: scale3d(0.97, 0.97, 0.97);
+    }
+
+    to {
+        opacity: 1;
+        -webkit-transform: scale3d(1, 1, 1);
+        transform: scale3d(1, 1, 1);
+    }
+}
+
+.bounceIn {
+    -webkit-animation-duration: 0.75s;
+    animation-duration: 0.75s;
+    -webkit-animation-name: bounceIn;
+    animation-name: bounceIn;
+}
+
+
+@-webkit-keyframes bounceOut {
+    20% {
+        -webkit-transform: scale3d(0.9, 0.9, 0.9);
+        transform: scale3d(0.9, 0.9, 0.9);
+    }
+
+    50%,
+    55% {
+        opacity: 1;
+        -webkit-transform: scale3d(1.1, 1.1, 1.1);
+        transform: scale3d(1.1, 1.1, 1.1);
+    }
+
+    to {
+        opacity: 0;
+        -webkit-transform: scale3d(0.3, 0.3, 0.3);
+        transform: scale3d(0.3, 0.3, 0.3);
+    }
+}
+
+@keyframes bounceOut {
+    20% {
+        -webkit-transform: scale3d(0.9, 0.9, 0.9);
+        transform: scale3d(0.9, 0.9, 0.9);
+    }
+
+    50%,
+    55% {
+        opacity: 1;
+        -webkit-transform: scale3d(1.1, 1.1, 1.1);
+        transform: scale3d(1.1, 1.1, 1.1);
+    }
+
+    to {
+        opacity: 0;
+        -webkit-transform: scale3d(0.3, 0.3, 0.3);
+        transform: scale3d(0.3, 0.3, 0.3);
+    }
+}
+
+.bounceOut {
+    -webkit-animation-duration: 0.75s;
+    animation-duration: 0.75s;
+    -webkit-animation-name: bounceOut;
+    animation-name: bounceOut;
+}

@@ -36,12 +36,17 @@
     flex: 1;
 }
 
+.switch-container > .form-row > .col > div {
+    min-height: 250px;
+    max-height: 250px;
+
+}
+
 select[class*='switch-'] {
     display: none;
 }
 
 select[class*='switch-'] + ul {
-    height: 200px;
     margin: 0;
     padding: 0;
     background-color: white;
@@ -54,8 +59,9 @@ select[class*='switch-'] + ul > li {
     display: flex;
     padding: 3px 5px;
     min-height: 25px;
-    justify-content: space-between;
+    justify-content: flex-start;
     text-transform: uppercase;
+    overflow: hidden;
 }
 
 select[class*='switch-'] + ul > li:nth-child(odd) {

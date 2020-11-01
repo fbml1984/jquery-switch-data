@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="humble-uploader.css" rel="stylesheet" title="Default Style">
+</head>
+<body>
+
+<input type="file" name="multifiles[]" class="humble-multifiles">
+<input type="file" name="dropzone[]" class="humble-dropzone">
+<input type="file" name="single[]" class="humble-single">
+
+<script src="humble-uploader.js"></script>
+<script>
+    var multiple = new HumbleUploader({
+        el: "multifiles[]",
+        thumbnail: {
+            width: 100,
+            height: 100,
+            margin: 5,
+            border: 5,
+            borderColor: "white"
+        },
+        thumbnailGridSize: 15,
+        imageDefault: "./img/default.png"
+    });
+
+    var dropzone = new HumbleUploader({
+        el: "dropzone[]",
+        thumbnail: {
+            width: 100,
+            height: 100,
+            margin: 5,
+            border: 5,
+            borderColor: "white"
+        },
+        thumbnailGridSize: 15,
+        imageDefault: "./img/default.png"
+    });
+
+    var single = new HumbleUploader({
+        el: "single[]",
+        thumbnail: {
+            width: 100,
+            height: 100,
+            margin: 5,
+            border: 5,
+            borderColor: "white"
+        },
+        placeholder: "Selecionar arquivo",
+        thumbnailGridSize: 15,
+        imageDefault: "./img/default.png"
+    });
+</script>
+</body>
+</html>
